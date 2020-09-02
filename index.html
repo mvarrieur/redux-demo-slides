@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Going to the (Redux) store</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
+	<link rel="stylesheet" href="css/custom.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- CQRS -->
+			<section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides">CQRS</h1>
+					<h3><u>C</u>ommand <u>Q</u>uery <u>R</u>esponsibility <u>S</u>egregation</h3>
+				</section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
+					<h3>Commands</h3>
+					<p class="fragment fade-in">Commands are your service interfaces that change the state of a system but do not
+						return a value</p>
+				</section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
+					<h3>Queries</h3>
+					<p class="fragment fade-in">Service interfaces that return a result and do <u>not</u> change the state of a
+						system (no side effects)
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
+					<h3>Comparison to CRUD</h3>
+					<div class="fragment fade-up">
+						<h4>Commands</h4>
+						<p>Similar to the HTTP operations that would be modifying a resource, (POST, PUT, PATCH, DELETE)</p>
+					</div>
+
+					<div class="fragment fade-up">
+						<h4>Queries</h4>
+						<p>Similar to a GET: a query returns the information to whatever is expecting it, but nothing happens to the
+							underlying resource</p>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
+					<h3>Pros and Cons</h3>
+					<div class="fragment fade-up">
+						<h4>Benefits</h4>
+						<ul>
+							<li>Complex domains may become easier to reason about, everything is now task based</li>
+							<li>Separate the load of reads and writes independently might allow for easier scaling</li>
+							<li>The system almost becomes asynchronous by default</li>
+						</ul>
+					</div>
+
+					<div class="fragment fade-up">
+						<h4>Not benefits</h4>
+						<ul>
+							<li>Learning curve / paradigm shift</li>
+							<li>What are the best practices?</li>
+						</ul>
+					</div>
+
+
+				</section>
+			</section>
+
+			<!-- Event Sourcing-->
+			<section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides">Event Sourcing</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 class="header-detail-slides">Event Sourcing</h1>
+					<h2>Ledger/Event Log</h2>
+					<img src="./assets/images/ledger.png" style="width: 40%;" />
+					<ul class="fragment fade-in">
+						<li>Store every event + associated metadata</li>
+						<li>Able to start from scratch and recreate application state by stepping through each event in order</li>
+						<li>While debugging you can move forwards and backwards in time</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Flux -->
+			<section>
+				<section>
+					<h1>Flux</h1>
+				</section>
+				<section>
+					<h1 class="header-detail">Flux</h1>
+					<h2>One-way data flow</h2>
+					<img src="./assets/images/one-way-data.png" />
+					<div>
+						<p>Views don't directly change data in the store, everything goes through the dispatcher via actions</p>
+					</div>
+				</section>
+			</section>
+
+			<!-- Resources-->
+			<section>
+				<h2>Resources</h2>
+				<ul>
+					<li><a href="https://martinfowler.com/bliki/CQRS.html">https://martinfowler.com/bliki/CQRS.html</a></li>
+					<li><a
+							href="https://martinfowler.com/bliki/CommandQuerySeparation.html">https://martinfowler.com/bliki/CommandQuerySeparation.html</a>
+					</li>
+					<li><a
+							href="https://martinfowler.com/eaaDev/EventSourcing.html">https://martinfowler.com/eaaDev/EventSourcing.html</a>
+					</li>
+					<li><a href="https://redux.js.org/introduction/motivation/">https://redux.js.org/introduction/motivation/</a>
+					</li>
+					<li><a
+							href="http://facebook.github.io/flux/docs/in-depth-overview/">http://facebook.github.io/flux/docs/in-depth-overview/</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
