@@ -23,7 +23,7 @@
 			<!-- CQRS -->
 			<section class=".cqrs">
 				<section data-auto-animate>
-					<h1 id="header1">CQRS</h1>
+					<h1>CQRS</h1>
 					<h3><u>C</u>ommand <u>Q</u>uery <u>R</u>esponsibility <u>S</u>egregation</h3>
 				</section>
 				<section data-auto-animate>
@@ -74,7 +74,7 @@
 			<!-- Event Sourcing-->
 			<section>
 				<section data-auto-animate>
-					<h1 id="header1">Event Sourcing</h1>
+					<h1>Event Sourcing</h1>
 				</section>
 				<section data-auto-animate>
 					<h2>Ledger/Event Log</h2>
@@ -90,7 +90,7 @@
 			<!-- Flux -->
 			<section>
 				<section>
-					<h1 id="header1">Flux</h1>
+					<h1>Flux</h1>
 				</section>
 				<section>
 					<h2>One-way data flow</h2>
@@ -107,7 +107,53 @@
 
 			<!-- Redux -->
 			<section>
-				<h1>Redux</h1>
+				<section>
+					<h1>Redux</h1>
+				</section>
+
+				<section>
+					<h2>Inspirations: CQRS</h2>
+					<ul>
+						<li class="fragment fade-up">
+							Commands
+							<ul class="fragment fade-up">
+								<li>Actions</li>
+								<li>Reducers</li>
+							</ul>
+						</li>
+						<li class="fragment fade-up">
+							Queries
+							<ul class="fragment fade-up">
+								<li>mapStateToProps</li>
+								<li>selectors</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Inspirations: Event Sourcing</h2>
+					<ul>
+						<li class="fragment fade-up">Each action that is dispatched is considered an event</li>
+						<li class="fragment fade-up">Starting from scratch and replaying all the actions sequentially will get you
+							back into the same state
+						</li>
+						<li class="fragment fade-up">Note: your reducers should be <em>deterministic</em> and <em>immutable</em>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Inspirations: Flow</h2>
+					<ul>
+						<li class="fragment fade-up">The end result: A Redux store is a single plain JavaScript object at the top of
+							your DOM</li>
+						<li class="fragment fade-up">Dynamic presentational data can be derived from the store
+						</li>
+						<li class="fragment fade-up">Similar to: Angular's OnPush change detection</em>
+						</li>
+					</ul>
+				</section>
 			</section>
 
 			<!-- Resources-->
