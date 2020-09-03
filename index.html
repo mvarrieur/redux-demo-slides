@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
-	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="dist/custom.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -18,71 +18,65 @@
 
 <body>
 	<div class="reveal">
+
 		<div class="slides">
 			<!-- CQRS -->
-			<section>
+			<section class=".cqrs">
 				<section data-auto-animate>
-					<h1 class="header-detail-slides">CQRS</h1>
+					<h1 id="header1">CQRS</h1>
 					<h3><u>C</u>ommand <u>Q</u>uery <u>R</u>esponsibility <u>S</u>egregation</h3>
 				</section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
-					<h3>Commands</h3>
+					<h2>Commands</h2>
 					<p class="fragment fade-in">Commands are your service interfaces that change the state of a system but do not
 						return a value</p>
 				</section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
-					<h3>Queries</h3>
+					<h2>Queries</h2>
 					<p class="fragment fade-in">Service interfaces that return a result and do <u>not</u> change the state of a
 						system (no side effects)
 					</p>
 				</section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
-					<h3>Comparison to CRUD</h3>
+					<h2>Comparison to CRUD</h2>
 					<div class="fragment fade-up">
-						<h4>Commands</h4>
+						<h3>Commands</h3>
 						<p>Similar to the HTTP operations that would be modifying a resource, (POST, PUT, PATCH, DELETE)</p>
 					</div>
 
 					<div class="fragment fade-up">
-						<h4>Queries</h4>
+						<h3>Queries</h3>
 						<p>Similar to a GET: a query returns the information to whatever is expecting it, but nothing happens to the
 							underlying resource</p>
 					</div>
 				</section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides" class="header-detail-slides">CQRS</h1>
-					<h3>Pros and Cons</h3>
+					<h2>Pros and Cons</h2>
 					<div class="fragment fade-up">
-						<h4>Benefits</h4>
+						<h3>The Good</h3>
 						<ul>
 							<li>Complex domains may become easier to reason about, everything is now task based</li>
-							<li>Separate the load of reads and writes independently might allow for easier scaling</li>
+							<li>Separating the load of reads and writes independently might allow for easier scaling</li>
 							<li>The system almost becomes asynchronous by default</li>
 						</ul>
 					</div>
 
 					<div class="fragment fade-up">
-						<h4>Not benefits</h4>
+						<h3>The Bad</h3>
 						<ul>
 							<li>Learning curve / paradigm shift</li>
 							<li>What are the best practices?</li>
 						</ul>
 					</div>
-
-
 				</section>
 			</section>
 
 			<!-- Event Sourcing-->
 			<section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides">Event Sourcing</h1>
+					<h1 id="header1">Event Sourcing</h1>
 				</section>
 				<section data-auto-animate>
-					<h1 class="header-detail-slides">Event Sourcing</h1>
 					<h2>Ledger/Event Log</h2>
 					<img src="./assets/images/ledger.png" style="width: 40%;" />
 					<ul class="fragment fade-in">
@@ -96,16 +90,24 @@
 			<!-- Flux -->
 			<section>
 				<section>
-					<h1>Flux</h1>
+					<h1 id="header1">Flux</h1>
 				</section>
 				<section>
-					<h1 class="header-detail">Flux</h1>
 					<h2>One-way data flow</h2>
 					<img src="./assets/images/one-way-data.png" />
 					<div>
 						<p>Views don't directly change data in the store, everything goes through the dispatcher via actions</p>
 					</div>
 				</section>
+				<section>
+					<h2>Comparisons</h2>
+
+				</section>
+			</section>
+
+			<!-- Redux -->
+			<section>
+				<h1>Redux</h1>
 			</section>
 
 			<!-- Resources-->
@@ -126,6 +128,7 @@
 					</li>
 				</ul>
 			</section>
+
 		</div>
 	</div>
 
